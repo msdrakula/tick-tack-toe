@@ -1,7 +1,6 @@
 from gameparts import Board
 
-
-if __name__ == '__main__':
+def main():
     # Создать игровое поле - объект класса Board.
     game = Board()
     # Отрисовать поле в терминале.
@@ -11,3 +10,6 @@ if __name__ == '__main__':
     print('Ход сделан!')
     # Перерисовать поле с учётом сделанного хода.
     game.display()
+
+if __name__ == '__main__':
+    main()
