@@ -1,5 +1,11 @@
 # file_actions.py
 
+#контекстные менеджеры
+
+# with open('hello_bro.txt', 'w') as f:
+#     f.write('Здравствуй, Стас!') 
+
+
 # # Открыть на запись файл example.txt
 # file = open('example.txt', 'w', encoding='utf-8')
 # # Записать в файл строку.
@@ -15,3 +21,6 @@
 # print(content)
 # # Закрыть файл.
 # file.close() 
+
+
+
