@@ -1,6 +1,15 @@
 from gameparts import Board
 from gameparts.exceptions import CellOccupiedError, FieldIndexError
 
+
+def save_result(result):
+    # Открыть файл results.txt в режиме «добавление».
+    # Если нужно явно указать кодировку, добавьте параметр encoding='utf-8'.
+    file = open('results.txt', 'a', encoding='utf-8')
+    # Записать в файл содержимое переменной result.
+    file.write(result + '\n')
+    file.close()
+
 def main():
     # Создать игровое поле - объект класса Board.
     game = Board()
@@ -80,10 +89,20 @@ def main():
 
         # После каждого хода надо делать проверку на победу и на ничью.
         if game.check_win(current_player):
-            print(f'Победили {current_player}!')
+            # Сформировать строку.
+            result = f'Победили {current_player}.'
+            # Вывести строку на печать.
+            print(result)
+            # Добавить строку в файл.
+            save_result(result)
             running = False
         elif game.is_board_full():
-            print('Ничья!')
+            # Сформировать строку.
+            result = 'Ничья!'
+            # Вывести строку на печать.
+            print(result)
+            # Добавить строку в файл.
+            save_result(result)
             running = False
 
         # Тернарный оператор, через кототорый реализована смена игроков.
@@ -91,7 +110,10 @@ def main():
         # иначе — новым значением будет X.
         current_player = 'O' if current_player == 'X' else 'X'
 
-    
+
 
 if __name__ == '__main__':
     main()
+
+
+
